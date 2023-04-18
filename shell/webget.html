@@ -1,0 +1,321 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 13366
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+permissions-policy: interest-cohort=()
+Last-Modified: Mon, 17 Apr 2023 15:05:10 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "643d6026-3436"
+expires: Tue, 18 Apr 2023 05:10:32 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: C602:0ECB:EC0CFB:14BBA08:643E23F0
+Accept-Ranges: bytes
+Date: Tue, 18 Apr 2023 05:00:32 GMT
+Via: 1.1 varnish
+Age: 0
+X-Served-By: cache-chi-klot8100178-CHI
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1681794032.335943,VS0,VE57
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 66eea4f9fcce2982298d542c810c4c64ea98a9e4
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CSCI 320 - Operating Systems & Concurrency</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="/csci320/assets/vendor/bootswatch/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/csci320/assets/css/csci150.css" rel="stylesheet">
+
+</head>
+
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/csci320/index.html">CSCI 320: Spring 2023</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+
+                
+                  
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/csci320/#myview" id="download">Overview<span class="caret"></span></a>
+                      <div class="dropdown-menu" aria-labelledby="download">
+                        
+                            
+                                <a class="dropdown-item" href="#description">Description</a>
+                            
+                                <a class="dropdown-item" href="#goals">Learning Goals</a>
+                            
+                                <a class="dropdown-item" href="#resources">Resources</a>
+                            
+                        
+                    
+                  
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="#calendar">Calendar</a>
+                    </li>
+                    
+                  
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/csci320/#myview" id="download">Assessment<span class="caret"></span></a>
+                      <div class="dropdown-menu" aria-labelledby="download">
+                        
+                            
+                                <a class="dropdown-item" href="#projects">Projects</a>
+                            
+                                <a class="dropdown-item" href="#finalproject">Final Project</a>
+                            
+                                <a class="dropdown-item" href="#participation">Participation</a>
+                            
+                                <a class="dropdown-item" href="#grading">Specifications Grading</a>
+                            
+                                <a class="dropdown-item" href="#tokens">Tokens</a>
+                            
+                        
+                    
+                  
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="#commitments">Commitments</a>
+                    </li>
+                    
+                  
+                
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Portfolio Item Heading -->
+      <div class="row">&nbsp;
+      </div>
+      <div class="row">&nbsp;
+      </div>
+      <div class="row">&nbsp;
+        <div class="col-12">
+
+          <h1>Project 5: Webget</h1>
+
+<p>Write a command-line program called <code class="language-plaintext highlighter-rouge">webget</code> that downloads web pages and saves them locally. 
+Its command-line interface is as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: webget [url] 
+</code></pre></div></div>
+
+<p>Web pages are retrieved using the <code class="language-plaintext highlighter-rouge">GET</code> command in the <code class="language-plaintext highlighter-rouge">HTTP</code> protocol. Here is 
+the basic structure of a <code class="language-plaintext highlighter-rouge">GET</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET [file] HTTP/1.1
+Host: [hostname]
+Connection: Close
+
+</code></pre></div></div>
+
+<p>For example, if we wish to retrieve this web page, we might issue the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>webget https://hendrix-cs.github.io/csci320/projects/webget.html
+</code></pre></div></div>
+
+<p>Note that the protocol is <code class="language-plaintext highlighter-rouge">https</code>, the host is <code class="language-plaintext highlighter-rouge">hendrix-cs.github.io</code>, and the requested
+file is <code class="language-plaintext highlighter-rouge">csci320/projects/webget.html</code>.</p>
+
+<p>Given that command, <code class="language-plaintext highlighter-rouge">webget</code> would send the following <code class="language-plaintext highlighter-rouge">GET</code> message:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /csci320/projects/webget.html HTTP/1.1                                                                               
+Host: hendrix-cs.github.io                                                                                              
+Connection: Close
+
+</code></pre></div></div>
+
+<p><strong>Note</strong>: There is a blank line after the <code class="language-plaintext highlighter-rouge">Connection: Close</code> line. Without this blank line,
+the message is incomplete, and you will not receive a response. The <code class="language-plaintext highlighter-rouge">http</code> 
+protocol requires that each line end with both a carriage return and a linefeed.
+Each line in your message, then, should end with <code class="language-plaintext highlighter-rouge">\r\n</code>, and the last four characters
+in your message as a whole should be <code class="language-plaintext highlighter-rouge">\r\n\r\n</code>.</p>
+
+<h2 id="responses">Responses</h2>
+
+<p>When a file is successfully retrieved, you will first receive an HTTP header before the file contents. 
+Here is the beginning of a sample HTTP header:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK                                                                                                         Connection: close                                                                                                       Content-Length: 14140                                                                                                   
+Server: GitHub.com                                                                                                      
+Content-Type: text/html; charset=utf-8                                                                                  
+Strict-Transport-Security: max-age=31556952                                                                             
+last-modified: Thu, 21 Jan 2021 00:44:30 GMT
+</code></pre></div></div>
+
+<p>You will need to extract the HTML file from the returned characters. To do so:</p>
+<ul>
+  <li>Until you encounter a blank line, print out each header line to the command line.</li>
+  <li>Once a blank line is encountered:
+    <ul>
+      <li>All lines that follow should be saved in a file.</li>
+      <li>The local filename should be the name of the requested file from the server.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="security">Security</h2>
+
+<p>The original <code class="language-plaintext highlighter-rouge">http</code> protocol had no security features. Messages could easily be inspected while in transit. The 
+<code class="language-plaintext highlighter-rouge">https</code> protocol superimposes the <code class="language-plaintext highlighter-rouge">http</code> protocol atop the 
+<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a> (TLS) protocol. TLS provides
+end-to-end encryption to prevent messages from being inspected in transit.</p>
+
+<p>Place the following line in the <code class="language-plaintext highlighter-rouge">dependencies</code> section of your <code class="language-plaintext highlighter-rouge">Cargo.toml</code> to use the <a href="https://crates.io/crates/openssl">OpenSSL</a> crate:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl = { version = "0.10", features = ["vendored"] }
+</code></pre></div></div>
+
+<p>On Windows, you’ll want to compile under Windows Subsystem for Linux to facilitate the installation. Setting up
+OpenSSL is otherwise extremely annoying under Windows.</p>
+
+<p>Using sockets secured by TLS is straightforward:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>use openssl::ssl::{SslConnector, SslMethod};
+use std::io;
+
+fn send_message(host: &amp;str, port: usize, message: &amp;str) -&gt; io::Result&lt;()&gt; {
+    let tcp = TcpStream::connect(format!("{}:{}", host, port))?;
+    let connector = SslConnector::builder(SslMethod::tls())?.build();
+    let mut stream = connector.connect(host, tcp).unwrap();
+    stream.write(message.as_bytes())?;
+    
+    // TODO: ****Write code here to read and process the response from the socket.****
+    
+    Ok(())
+}
+</code></pre></div></div>
+
+<p>To read from a socket, I recommend using <a href="https://doc.rust-lang.org/std/io/struct.BufReader.html">BufReader</a>.</p>
+
+<h2 id="troubleshooting-security">Troubleshooting Security</h2>
+
+<p>You may get an error message when trying to create an SSL connection about being unable to 
+open a trust certificate. This sometimes happens when an aspect of the SSL installation doesn’t
+give enough clues as to where certificates are stored.</p>
+
+<p>If this occurs, use the <a href="https://crates.io/crates/openssl-probe">openssl-probe</a> crate to fix
+the problem:</p>
+<ul>
+  <li>Add this line to <code class="language-plaintext highlighter-rouge">Cargo.toml</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">openssl-probe = "0.1.5"</code></li>
+    </ul>
+  </li>
+  <li>Add this line to your <code class="language-plaintext highlighter-rouge">main()</code> at the very start:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">openssl_probe::init_ssl_cert_env_vars();</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="design-hints">Design Hints</h2>
+
+<ul>
+  <li>Separate the processing of command-line arguments from their implementation.
+    <ul>
+      <li>To this end, create a data structure to represent a request. It could contain:
+        <ul>
+          <li>The host name</li>
+          <li>The file to retrieve</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Write a function or method to create a string containing the <code class="language-plaintext highlighter-rouge">GET</code> message to be sent over the socket.
+    <ul>
+      <li>This facilitates debugging as well, as it makes it easy to print the <code class="language-plaintext highlighter-rouge">GET</code> message to the command line.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="checklist">Checklist</h2>
+
+<ul>
+  <li>Downloads web pages securely using <code class="language-plaintext highlighter-rouge">https</code>.</li>
+  <li>Saves downloaded pages into a local file.</li>
+</ul>
+
+<h2 id="submissions">Submissions</h2>
+<ul>
+  <li>Create a <strong>private</strong> GitHub repository for your webget program.</li>
+  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeCE51hAA4VV1jN_E4pVH1FDB3G6x7-GrIg5_MAP_qqMd6fAg/viewform?usp=sf_link">Submit the repository URL</a>.</li>
+</ul>
+
+<h2 id="assessment">Assessment</h2>
+<ul>
+  <li><strong>Partial</strong>: First item from the checklist.</li>
+  <li><strong>Complete</strong>: Both items from the checklist.</li>
+</ul>
+
+<hr />
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+        <!-- Footer -->
+    <footer class="py-4 bg-primary">
+      <div class="container">
+        <p class="m-0 text-center text-white"><small>Copyright &copy; Hendrix Computer Science 2023</small></p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/csci320/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/csci320/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://hypothes.is/embed.js" async></script>
+  	<script>
+  	// https://github.com/twbs/bootstrap/issues/1768
+  var shiftWindow = function() { scrollBy(0, -70) };
+  if (location.hash) shiftWindow();
+  window.addEventListener("hashchange", shiftWindow);
+
+  //https://codepen.io/lkp/pen/bdPbQx
+  $(function(){
+       var navMain = $(".navbar-collapse");
+
+       navMain.on("click", "a", null, function () {
+           navMain.collapse('hide');
+       });
+   });
+   </script>
+
+
+  </body>
+</html>
